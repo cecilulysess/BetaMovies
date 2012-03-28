@@ -1,4 +1,6 @@
 BetaMovies::Application.routes.draw do
+  #get "movies/index"
+  
   resources :movies
 
   # The priority is based upon order of creation:
@@ -14,7 +16,7 @@ BetaMovies::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-
+  # root :to => 'movies#index', :as => 'movies'
   # Sample resource route with options:
   #   resources :products do
   #     member do
