@@ -1,0 +1,41 @@
+// Place all the styles related to the Movies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+div{
+  width:1200px;
+  height:auto;
+}
+ul#title li{
+  font-weight:700;
+}
+ul{
+  margin:0;
+  width:1200px;
+  height:100px;
+}
+li{
+  border:1px solid #000;
+  border-collapse:collapse;
+  padding-top:10px;
+  width:100px;
+  height:88px;
+  float:left;
+  display:inline;
+  overflow:hidden;
+  text-align:center;
+}
+li.movie_desc{
+  width:300px;
+}
+li.liimg{
+  padding-top:0;
+  height:98px;
+}
+li.liimg img{
+  height:100px;
+  width:auto;  
+}
+   
+  // width:180px;
+  // height:30px;
+// }
