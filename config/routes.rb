@@ -1,4 +1,6 @@
 BetaMovies::Application.routes.draw do
+  get "watch/index"
+  get "watch/show_episode"
   #get "movies/index"
   
   resources :movies
