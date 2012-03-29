@@ -3,7 +3,7 @@ BetaMovies::Application.routes.draw do
   get "watch/show_episode"
   
   
-  # match 'watch/:episode_id/show_episode' => 'watch/show_episode'
+  # match 'watch/:episode_id/show_episode' => 'watch/show_episode?episode_id=:episode_id'
     
   resources :movies
 
