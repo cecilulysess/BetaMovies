@@ -7,8 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="bodycontainer">
+  <div id="topbg">
+  <div id="top">
+  	<%= image_tag("/assets/logo.png", :class=>"logo_image") %>
+  </div>  	
+  </div>
+  
+  <div id="content">
+  <%= yield %>
+  </div>
 
-<%= yield %>
-
+</div>
 </body>
 </html>

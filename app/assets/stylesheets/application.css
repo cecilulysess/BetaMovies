@@ -10,4 +10,85 @@
  *
  *= require_self
  *= require_tree .
+*//*
+ * CSS Framework For HQU
+ *
+ * Core CSS to reset and preset(CSS的复位和样式库)
+ *
+ * !!!!!Don't make any changes in this file!!!!!
+ *
+ * Version: Beta1   Copyright 2011
+ */
+
+/* Contents
+  
+  0-Resets
+  2-Presets
+
 */
+
+/* 0 Resets ----------- */
+
+* {
+	margin:0px;
+	padding:0px;
+	font-size:12px;
+	font-family:Microsoft YaHei,Segoe UI,Tahoma,Arial,Verdana,sans-serif;
+	cellspacing:0px;
+	cellpadding:0px;
+}
+ul {
+	list-style:none;
+}
+img{
+	border:0;
+}
+a {
+	text-decoration:none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* 1 Preset ----------- */
+
+.db{
+	display:block;
+}
+.dn {
+	display:none;
+}
+.fl{
+	float:left;
+	_display:inline;
+}
+.fr{
+	float:right;
+	_display:inline;
+}
+.cl{
+	clear:both;
+}
+.tl {
+	text-align:left;
+}
+.tc {
+	text-align:center;
+}
+.tr {
+	text-align:right;
+}
+.tdn{
+	text-decoration:none;
+}
+.ovh {
+	overflow:hidden;
+}
+.c0{
+	color:#000;
+}
+.cf{
+	color:#fff;
+}
+

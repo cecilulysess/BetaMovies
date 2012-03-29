@@ -1,26 +1,16 @@
-<h1>Listing movies</h1>
-
 <div>
-  <ul id="title">
-    <li>标题</li>
-    <li class="movie_desc">影片简介</li>
-    <li>首页展示图片</li>
-    <li>上次更新时间</li>
-    <li>已完结</li>
-    <li></li>
-    <li></li>
-  </ul>
-
 <% @movies.each do |movie| %>
+  <div class="movierow">
+  <p><img src="<%= movie.image_url %>" /></p>
   <ul>
-    <li><%= link_to movie.title, movie %></li>
-    <li class="movie_desc"><%= movie.description %></li>
-    <li class="liimg"><img src="<%= movie.image_url %>" /></li>
-    <li><%= movie.last_updated %></li>
-    <li><%= movie.is_finished ? "已完结" : "连载中"%></li>
-    <li><%= link_to '编辑/插入新集', edit_movie_path(movie) %></li>
-    <li><%= link_to '删除', movie, confirm: '删除本片，包括所有集?', method: :delete %></li>
+    <li class="movie_title"><%= link_to movie.title, movie %></li>
+    <li class="movie_desc"><%= truncate(strip_tags(movie.description),:length => 80) %></li>
+    <li class="movie_last"><%= movie.last_updated %></li>
+    <li class="movie_fini"><%= movie.is_finished ? "已完结" : "连载中"%></li>
+    <li class="movie_edit"><%= link_to '编辑/插入新集', edit_movie_path(movie) %></li>
+    <li class="movie_del"><%= link_to '删除', movie, confirm: '删除本片，包括所有集?', method: :delete %></li>
   </ul>
+  </div>
 <% end %>
 </div>
 
