@@ -14,4 +14,8 @@ class TrackingList < ActiveRecord::Base
     end
     current_movie
   end
+  
+  def find_movie(movie_id)
+    tracking_items.where(:movie_id => movie_id).first
+  end
 end

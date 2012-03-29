@@ -4,7 +4,15 @@
 <ul>
 	<li>共有：<%= @tracking_list.quantity%> 部片</li>
 	<% for item in @tracking_list.tracking_items %>
-	<li><%= item.movie.title %> <% link_to item.last_watched_episode.episode_title, episode_path(item.last_watched_episode) %></li>
+	<li><%= item.movie.title %></li> 
+	<li>上次观看的剧集： <% if item.last_watched_episode_id %>
+		<% episode = Episode.find(item.last_watched_episode_id) %>
+		<%= link_to episode.episode_title, watch_show_episode_path(:episode_id => episode.id)%>
+		<% else %>
+		还没看过一集哦，加油啊。。。
+		<% end %>
+	</li>
+	<hr/>
 	<% end %>
 </ul>
 

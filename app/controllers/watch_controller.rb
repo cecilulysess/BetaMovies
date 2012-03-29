@@ -10,6 +10,11 @@ class WatchController < ApplicationController
     @movie_title = 
       @movie.title
     @all_episodes = Movie.find(@episode.movie_id).episodes
-    
+    tracking_list = current_tracking_list
+    tracking_item = tracking_list.find_movie(@episode.movie_id)
+    if tracking_item
+      tracking_item.last_watched_episode_id = @episode.id
+      tracking_item.save
+    end
   end
 end
