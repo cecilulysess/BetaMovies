@@ -1,0 +1,17 @@
+<%= form_for(@tracking_list) do |f| %>
+  <% if @tracking_list.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@tracking_list.errors.count, "error") %> prohibited this tracking_list from being saved:</h2>
+
+      <ul>
+      <% @tracking_list.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

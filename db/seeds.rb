@@ -7,6 +7,8 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 # coding: utf-8
 Movie.delete_all
+TrackingList.delete_all
+TrackingItem.delete_all
 efmovie = Movie.create( :title=>"EFTest", 
               :description => "This is a 测试",
               :image_url => "http://upload.wikimedia.org/wikipedia/en/5/59/Ef_-_the_first_tale._screenshot.jpg",
@@ -78,3 +80,67 @@ Movie.create( :title=>"《火影忍者 疾风传》(NARUTO Shippuuden)",
               :last_updated => DateTime.parse("2012-03-27"),
               :is_finished => false,
                )
+               
+dongzhiyidian = Movie.create( :title=>"东之伊甸", 
+              :description => "2010年11月22日星期一，日本各地遭到以10发导弹进行的恐怖攻击，不过奇迹似地没有任何人牺牲，这场逐渐被人遗忘的恐怖攻击被称为“疏忽的星期一”。3个月后，到美国毕业旅行的大学生森美咲在华盛顿哥伦比亚特区的白宫前被卷入纠纷，一位记忆丧失的全裸青年泷泽朗出现在他面前帮助她逃跑。意气相投的两人最后一起回到日本。不过，当天第11发导弹飞到了东京。这时，泷泽携带的手机传来自称为Juiz的女性的神秘讯息。
+在寻找自己过去的过程中，泷泽朗接触到了别的Seleção，同时也渐渐得知自己的身世和导弹袭击的真相，以及Seleção们被迫参与的这场游戏的本质。",
+              :image_url => "http://img.article.pchome.net/00/43/63/46//pic_lib/wm/07.jpg",
+              :last_updated => DateTime.parse("2012-03-29"),
+              :is_finished => true,
+               )
+Episode.create(
+              :episode_title => "01",
+              :link => "http://bbs.sends.cc/ulysess/dongzhiyidian/01.mp4",
+              :movie_id => dongzhiyidian.id
+)
+
+Episode.create(
+              :episode_title => "02",
+              :link => "http://bbs.sends.cc/ulysess/dongzhiyidian/02.mp4",
+              :movie_id => dongzhiyidian.id
+)
+Episode.create(
+              :episode_title => "03",
+              :link => "http://bbs.sends.cc/ulysess/dongzhiyidian/03.mp4",
+              :movie_id => dongzhiyidian.id
+)
+Episode.create(
+              :episode_title => "04",
+              :link => "http://bbs.sends.cc/ulysess/dongzhiyidian/04.mp4",
+              :movie_id => dongzhiyidian.id
+)
+Episode.create(
+              :episode_title => "05",
+              :link => "http://bbs.sends.cc/ulysess/dongzhiyidian/05.mp4",
+              :movie_id => dongzhiyidian.id
+)
+Episode.create(
+              :episode_title => "06",
+              :link => "http://bbs.sends.cc/ulysess/dongzhiyidian/06.mp4",
+              :movie_id => dongzhiyidian.id
+)
+Episode.create(
+              :episode_title => "07",
+              :link => "http://bbs.sends.cc/ulysess/dongzhiyidian/07.mp4",
+              :movie_id => dongzhiyidian.id
+)
+Episode.create(
+              :episode_title => "08",
+              :link => "http://bbs.sends.cc/ulysess/dongzhiyidian/08.mp4",
+              :movie_id => dongzhiyidian.id
+)
+Episode.create(
+              :episode_title => "09",
+              :link => "http://bbs.sends.cc/ulysess/dongzhiyidian/09.mp4",
+              :movie_id => dongzhiyidian.id
+)
+Episode.create(
+              :episode_title => "10",
+              :link => "http://bbs.sends.cc/ulysess/dongzhiyidian/10.mp4",
+              :movie_id => dongzhiyidian.id
+)
+Episode.create(
+              :episode_title => "11",
+              :link => "http://bbs.sends.cc/ulysess/dongzhiyidian/11.mp4",
+              :movie_id => dongzhiyidian.id
+)

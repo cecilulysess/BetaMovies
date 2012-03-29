@@ -9,7 +9,7 @@ class WatchController < ApplicationController
     @movie = Movie.find(@episode.movie_id)
     @movie_title = 
       @movie.title
-    @all_episodes = Movie.find(@episode.movie_id).episode
+    @all_episodes = Movie.find(@episode.movie_id).episodes
     
   end
 end

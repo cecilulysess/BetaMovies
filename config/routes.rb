@@ -1,4 +1,8 @@
 BetaMovies::Application.routes.draw do
+  resources :tracking_items
+
+  resources :tracking_lists
+
   get "watch/index"
   get "watch/show_episode"
   
@@ -57,7 +61,7 @@ BetaMovies::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
   # root :to => 'welcome#index'
-
+  root :to =>'watch#index', :as=>'watch'
   # See how all your routes lay out with "rake routes"
 
   # This is a legacy wild controller route that's not recommended for RESTful applications.

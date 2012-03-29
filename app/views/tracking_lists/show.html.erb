@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<h1>那些年，您独自追的片片。。。</h1>
+<ul>
+	<li>共有：<%= @tracking_list.quantity%> 部片</li>
+	<% for item in @tracking_list.tracking_items %>
+	<li><%= item.movie.title %> <% link_to item.last_watched_episode.episode_title, episode_path(item.last_watched_episode) %></li>
+	<% end %>
+</ul>
+
+
+<%= link_to 'Edit', edit_tracking_list_path(@tracking_list) %> |
+<%= link_to 'Back', tracking_lists_path %>
