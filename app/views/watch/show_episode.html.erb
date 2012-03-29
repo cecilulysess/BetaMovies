@@ -1,5 +1,9 @@
-<h1><%= @episode.episode_title %></h1>
-<video controls="true" width="100%" src= <%= @episode.link %>></video>
+<h1> <%= @movie_title %> - <%= @episode.episode_title %></h1>
+<video autoplay controls="true" width="100%">
+	<source src= <%= @episode.link %> type="video/mp4" />
+	当你看到这条消息的时候意味着你的浏览器不被支持，请使用Google Chrome访问本站。
+	<a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN">下载Google Chrome</a>
+</video>
 <hr/>
 <h2>其他可观看集</h2>
 <span class="episodes">
@@ -8,7 +12,11 @@
 		<% if episode.id == @episode.id %>
 			<%= episode.episode_title %>
 		<% else %>
-			<%= link_to episode.episode_title, watch_show_episode_path(episode) %>
+			<%= link_to episode.episode_title, 
+				watch_show_episode_path(:episode_id => episode.id) %>
 		<% end %>
 	<% end %>
+
+<hr/>
+<%= link_to "返回影片列表", watch_index_path %>
 
