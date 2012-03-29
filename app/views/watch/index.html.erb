@@ -1,2 +1,26 @@
-<h1>Watch#index</h1>
-<p>Find me in app/views/watch/index.html.erb</p>
+<% if notice %>
+<p id ="notice"><%= notice %></p>
+<% end %>
+
+<h1>影片列表</h1>
+
+<% @movies.each do |movie| %>
+	<div class="entry">
+		<%= image_tag(movie.image_url)%>
+		<h3><%= movie.title %></h3>
+		<%= sanitize movie.description %>
+		<div class="episode_list">
+			<h4>可观看剧集</h4>
+			<span class="episodes">
+				<% if movie.episode.size > 0 %>
+					<% movie.episode.each do |an_episode| %>
+						<%= link_to an_episode.episode_title, watch_show_episode_path(:episode_id => an_episode.id) %>
+					<% end %>
+				<% else %>
+					<span class="no_episode_available">暂无</span>
+				<% end %>
+			</span>
+		</div>
+    </div>
+    <hr/>
+<% end %>

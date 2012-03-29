@@ -7,12 +7,37 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 # coding: utf-8
 Movie.delete_all
-Movie.create( :title=>"EFTest", 
+efmovie = Movie.create( :title=>"EFTest", 
               :description => "This is a 测试",
               :image_url => "http://upload.wikimedia.org/wikipedia/en/5/59/Ef_-_the_first_tale._screenshot.jpg",
               :last_updated => DateTime.parse("2012-03-27"),
               :is_finished => true,
                )
+Episode.create(
+              :episode_title => "EFTest",
+              :link => "http://bbs.sends.cc/ulysess/eftest720p.mp4",
+              :movie_id => efmovie.id
+)
+naxienian = Movie.create(:title=>"那些年，我们一起追的女孩", 
+              :description => %{青春是一场大雨。即使感冒了，还盼望回头再淋它一次。
+    青春更是一本书，一本读一遍就印象深刻，一本让你回味无穷的书。
+    故事背景设定于1994年的彰化县精诚中学，亦是导演兼编剧的九把刀的母校。青春是一场大雨。即使感冒了，还盼望回头再淋它一次。人生就是不停的战斗，在还没有获得女神青睐时，左手永远都只是辅助！！！
+    柯景腾（柯震东饰）的一群好友：爱耍帅却老是情场失意的老曹（敖犬饰），停止不了勃起所以叫勃起的勃起（鄢胜宇饰），想用搞笑致胜却总是失败的该边（蔡昌宪饰），胖界的夺爱高手阿和（赦绍文饰），为了共同喜欢的女孩——沈佳宜（陈妍希饰），不约而同从精诚中学国中部直升到高中部，一路都在进行他们从未完成的恋爱大作战。
+    柯腾在一日上课时与勃起打手枪，结果被老师惩罚更换座位，坐到了沈佳宜前面。后来英文课时，沈佳宜没有携带课本，柯腾于是将自己的课本偷偷传给她，并站起来表示自己没携带课本，惹得老师一阵痛骂并体罚。沈佳宜为了感谢柯腾，还特地帮他出了“爱心考卷”，要柯腾好好用功。在过程中，两人不知不觉地逐渐喜欢上了彼此。
+    毕业之后，联考放榜，柯腾考上了国立交通大学管科系，谢明和上东海大学企业管理系、廖英宏上逢甲大学资讯工程系、曹国胜上国立成功大学化工系，而沈佳宜在联考时因身体不适而表现失常，只考上了国立台北师范学院（今国立台北教育大学）感到十分难过沮丧。尽管身隔两地，柯腾每天晚上都会排队打公共电话，来关心沈佳宜。柯腾认为男生都要在女生面前表现自己最强的一面，于是举办了一场“自由格斗赛”。赛后，沈佳宜怪柯腾幼稚，不能理解为何柯腾要办比赛把自己弄伤；而柯腾则认为，沈佳宜不能理解他想在她面前表现出勇敢的一面，两人因此大吵一架。在大雨中，柯腾痛苦地放弃追求沈佳宜。
+    大学毕业以后，柯腾考上东海大学研究所，并在过程中开始写小说。尽管两人未能成为恋人，不过友情却进一步升华，成为永远的好友。
+    最后，大家都得到了各自的成长，拥有自己的未来。没有人哭泣、没有人懊恼，只有满心的祝福与胡闹。
+    
+    其实青春就是这样，总有一个得不到的人，总有一个错过的人，总有一个得到了却发现不是当初要找的那个人，剧中的新娘子是漂亮的，她身边的人也是合适的，真心祝福我们没得到的另一半吧，其实自己身边的人也是当年别人心中的天使。},
+              :image_url => "http://img.shop.xunlei.com/pic/36/20136hbe.jpg",
+              :last_updated => DateTime.parse("2012-03-28"),
+              :is_finished => true,
+)
+Episode.create(
+              :episode_title => "1080P",
+              :link => "http://bbs.sends.cc/ulysess/naxienian1080P.mp4",
+              :movie_id => naxienian.id
+)
 Movie.create( :title=>"《钢之炼金术师剧场版：叹息之丘的神圣之星》(Fullmetal Alchemist The Sacred Star of Milos)", 
               :description => %{"《钢之炼金术师》堪称Bones这些年出品的最为亮眼的动画系列，
                 从最初的年番TV到《香巴拉的征服者》剧场版结局补全，再到09年开启的《FA》重制，

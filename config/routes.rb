@@ -1,8 +1,10 @@
 BetaMovies::Application.routes.draw do
   get "watch/index"
   get "watch/show_episode"
-  #get "movies/index"
   
+  
+  # match 'watch/:episode_id/show_episode' => 'watch/show_episode'
+    
   resources :movies
 
   # The priority is based upon order of creation:
