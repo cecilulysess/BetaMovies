@@ -1,6 +1,6 @@
 class WatchController < ApplicationController
   def index
-    @movies = Movie.all
+    @movies = Movie.find(:all, :limit=> 10)
     @tracking_list = current_tracking_list
   end
   
