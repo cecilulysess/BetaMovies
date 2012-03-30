@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120328090851) do
+ActiveRecord::Schema.define(:version => 20120329113507) do
 
   create_table "episodes", :force => true do |t|
     t.string   "episode_title"
@@ -31,6 +31,20 @@ ActiveRecord::Schema.define(:version => 20120328090851) do
     t.boolean  "is_finished"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+  end
+
+  create_table "tracking_items", :force => true do |t|
+    t.integer  "movie_id"
+    t.integer  "tracking_list_id"
+    t.datetime "created_at",              :null => false
+    t.datetime "updated_at",              :null => false
+    t.integer  "last_watched_episode_id"
+  end
+
+  create_table "tracking_lists", :force => true do |t|
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+    t.integer  "quantity",   :default => 0
   end
 
 end

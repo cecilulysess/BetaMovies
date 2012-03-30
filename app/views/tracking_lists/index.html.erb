@@ -1,0 +1,21 @@
+<h1>Listing tracking_lists</h1>
+
+<table>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tracking_lists.each do |tracking_list| %>
+  <tr>
+    <td><%= link_to 'Show', tracking_list %></td>
+    <td><%= link_to 'Edit', edit_tracking_list_path(tracking_list) %></td>
+    <td><%= link_to 'Destroy', tracking_list, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tracking list', new_tracking_list_path %>

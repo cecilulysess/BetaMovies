@@ -1,0 +1,15 @@
+<li>
+	<% if tracking_item == @current_item %>
+	<li id="current_tracking_item">
+	<% else %>
+	<li>
+	<% end %> <%= tracking_item.movie.title %></li> 
+	上次观看的剧集： <% if tracking_item.last_watched_episode_id %>
+		<% episode = Episode.find(tracking_item.last_watched_episode_id) %>
+		
+		<%= link_to episode.episode_title, watch_show_episode_path(:episode_id => episode.id)%>
+		<% else %>
+		还没看过一集哦，加油啊。。。
+		<% end %>
+		<hr/>
+</li>
