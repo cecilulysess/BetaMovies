@@ -43,7 +43,7 @@ class TrackingItemsController < ApplicationController
     @tracking_list = current_tracking_list
     movie = Movie.find(params[:movie_id])
     @tracking_item = @tracking_list.add_movie(movie.id)
-    
+    @tracking_list = current_tracking_list
     notice_msg = @tracking_item ? 
         "Tracking item was successfully created." : 'Already in the list.';
     
@@ -51,6 +51,7 @@ class TrackingItemsController < ApplicationController
       # if already in the list or new item to add
       if @tracking_item == nil || @tracking_item.save
         format.html { redirect_to @tracking_list, notice: notice_msg }
+        format.js   { @current_item = @tracking_item }
         format.json { render json: @tracking_item, status: :created, location: @tracking_item }
       else
         format.html { render action: "new" }

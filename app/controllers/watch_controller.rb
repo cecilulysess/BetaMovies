@@ -1,9 +1,14 @@
 class WatchController < ApplicationController
   def index
     @movies = Movie.all
+    @tracking_list = current_tracking_list
   end
   
   def show_episode
+    
+    @tracking_list = current_tracking_list
+    
+    
     @episode = Episode.find(params[:episode_id])
     
     @movie = Movie.find(@episode.movie_id)

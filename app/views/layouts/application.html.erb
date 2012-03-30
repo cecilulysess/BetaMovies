@@ -13,8 +13,13 @@
   	<%= image_tag("logo.png", :class=>"logo_image") %>
   </div>  	
   </div>
+  <div id="side">
+  	<div id="tracking_list_float">
+  		<%= render @tracking_list %>
+  	</div>
+  </div>
   
-  <div id="content">
+  <div id="mainframe">
   <%= yield %>
   </div>
 

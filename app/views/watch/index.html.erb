@@ -6,7 +6,6 @@
 
 <% @movies.each do |movie| %>
 	<div class="entry">
-<!-- 		<h1><%= movie.id %> </h1> -->
 		<%= image_tag(movie.image_url)%>
 		<h3><%= link_to movie.title, movie_path(movie) %></h3>
 		<%= sanitize truncate(strip_tags(movie.description), :length => 80) %>
@@ -23,7 +22,9 @@
 				<% end %>
 			</span>
 		<p>--------------------------------------------------------</p>
-		<%= button_to "追此片", tracking_items_path(:movie_id => movie)%>
+		<%= button_to "追此片", 
+			tracking_items_path(:movie_id => movie), 
+			:remote => true %>
 		</div>
     </div>
     <hr/>
