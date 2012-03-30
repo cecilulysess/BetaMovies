@@ -3,14 +3,15 @@
 <head>
   <title>BetaMovies</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "default" %>
+  <%= javascript_include_tag "jquery", "mediaelement-and-player", "get_query_parameters", "QL_Player", "lecture_view" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 <div id="bodycontainer">
   <div id="topbg">
   <div id="top">
-  	<%= image_tag("/assets/logo.png", :class=>"logo_image") %>
+  	<%= image_tag("logo.png", :class=>"logo_image") %>
   </div>  	
   </div>
   

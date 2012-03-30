@@ -1,22 +1,50 @@
-<h1> <%= @movie_title %> - <%= @episode.episode_title %></h1>
-<video autoplay controls="true" width="100%">
-	<source src= <%= @episode.link %> type="video/mp4" />
-	当你看到这条消息的时候意味着你的浏览器不被支持，请使用Google Chrome访问本站。
-	<a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN">下载Google Chrome</a>
-</video>
-<hr/>
-<h2>其他可观看集</h2>
-<span class="episodes">
-	<% @all_episodes.each do |episode| %>
-	
-		<% if episode.id == @episode.id %>
-			<%= episode.episode_title %>
-		<% else %>
-			<%= link_to episode.episode_title, 
-				watch_show_episode_path(:episode_id => episode.id) %>
-		<% end %>
-	<% end %>
+<div id="lecture_view_dialog" role="dialog" aria-labelledby="lecture_title">
+    
+<div id="lecture_title" class="hidden"><%= @movie_title %> - <%= @episode.episode_title %></div>
 
-<hr/>
-<%= link_to "返回影片列表", watch_index_path %>
+<div id="QL_player_container_first">
+    <div class="hidden" id="QL_aria_announcer' aria-live="assertive" aria-relevant="all"></div>
+    <video controls="controls"
+           preload="none"
+           autoplay="autoplay"
+           loop="loop"
+           id="QL_video_element_first"
+           width="960"
+           height="540"
+           autobuffer="autobuffer">
+        <source src= <%= @episode.link %> type="video/mp4" />当你看到这条消息的时候意味着你的浏览器不被支持，请使用Google Chrome访问本站。
+	    <a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN">下载Google Chrome</a>
+        <track kind="subtitles" srclang="en" src="https://class.coursera.org/saas/lecture/subtitles?q=26_en"></track>    
+    </video>
+</div>
 
+<div id="QL_controls" style="position: absolute; top: 570px; width: 960px;">
+    <div class="prev-block">
+        <a href="#" id="QL_controls_previous" class="btn" style="display: none">&laquo; Previous</a>
+        &nbsp;
+    </div>
+    <div class="title-block">
+        Welcome to the Course!        <div class="set-cuepoint-group" style="display: none">
+            &nbsp;<a href="#" id="set-cuepoint-link" class="btn primary">Set Cuepoint</a>
+        </div>
+        <div class="speed-group" style="display: none">
+            &nbsp;
+            <a href="#" id="QL_controls_speed_minus" class="btn speed-link">-</a>
+            <a href="#" id="QL_controls_speed_display" class="btn">Speed: 1.00x</a>
+            <a href="#" id="QL_controls_speed_plus" class="btn speed-link">+</a>
+            <div class="speed-menu" style="display: none">
+                <a href="#" id="QL_controls_speed_150" class="btn speed-link">1.50x</a>
+                <a href="#" id="QL_controls_speed_125" class="btn speed-link">1.25x</a>
+                <a href="#" id="QL_controls_speed_100" class="btn speed-link">1.00x</a>
+                <a href="#" id="QL_controls_speed_075" class="btn speed-link">0.75x</a>
+            </div>
+        </div>
+    </div>
+    
+    <div class="next-block">
+        &nbsp;
+        <a href="#" id="QL_controls_next" class="btn" style="display: none">Next &raquo;</a>
+    </div>
+</div>
+</div>
+</div>
