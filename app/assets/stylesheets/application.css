@@ -95,19 +95,18 @@ table {
 
 
 #side{
+	z-index:10;
+	float:left;
 	position:fixed;
 	top:45px;
-	left:0;
+	left:200px;
 	width:200px;
 	height:auto;
 	background:#fff;
 }
 #mainframe{
-	margin-left:200px;
-	width:800px;
-	height:auto;
-	float:left;
-	display:inline;
-}
+	width:1000px;
+	height:800px;
+	margin:auto;
 }
 

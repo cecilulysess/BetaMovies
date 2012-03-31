@@ -11,16 +11,16 @@
 <div id="bodycontainer">
   <div id="topbg">
   <div id="top">
-  	<%= image_tag("logo.png", :class=>"logo_image") %>
+  	<a href="/"><%= image_tag("logo.png", :class=>"logo_image") %></a>
   </div>  	
   </div>
+  
+  <div id="mainframe">
   <div id="side">
   	<div id="tracking_list_float">
   		<%= render @tracking_list %>
   	</div>
   </div>
-  
-  <div id="mainframe">
   <%= yield %>
   </div>
 
