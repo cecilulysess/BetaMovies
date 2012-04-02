@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120329113507) do
+ActiveRecord::Schema.define(:version => 20120330103637) do
 
   create_table "episodes", :force => true do |t|
     t.string   "episode_title"
@@ -45,6 +45,14 @@ ActiveRecord::Schema.define(:version => 20120329113507) do
     t.datetime "created_at",                :null => false
     t.datetime "updated_at",                :null => false
     t.integer  "quantity",   :default => 0
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "hashed_password"
+    t.string   "salt"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
   end
 
 end

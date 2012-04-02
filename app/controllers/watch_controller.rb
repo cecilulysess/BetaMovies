@@ -1,7 +1,14 @@
 class WatchController < ApplicationController
   def index
-    @movies = Movie.find(:all, :limit=> 10)
+    # @movies = Movie.find(:all, :limit=> 10)
+    @movies = Movie.paginate(:page => params[:page], :order => 'last_updated desc',
+              :per_page => 15)
     @tracking_list = current_tracking_list
+    
+    respond_to do |format|
+      format.html
+      format.json { render json: @orders }
+    end
   end
   
   def show_episode

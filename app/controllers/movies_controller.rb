@@ -80,4 +80,13 @@ class MoviesController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  
+  def who_watched
+    @movie = Movie.find(params[:id])
+    respond_to do |format|
+      format.atom
+      format.xml {render :xml => @product}
+    end
+  end
 end

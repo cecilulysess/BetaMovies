@@ -28,8 +28,8 @@
 <div class="episode_list">
 	<h4>可观看剧集</h4>
 	<span class="episodes">
-		<% if @movie.episode.size > 0 %>
-			<% @movie.episode.each do |an_episode| %>
+		<% if @movie.episodes.size > 0 %>
+			<% @movie.episodes.each do |an_episode| %>
 				<%= link_to an_episode.episode_title, 
 					watch_show_episode_path(:episode_id => an_episode.id) %>
 			<% end %>

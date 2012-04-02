@@ -14,9 +14,13 @@
   </div>  	
   </div>
   <div id="side">
-  	<div id="tracking_list_float">
-  		<%= render @tracking_list %>
-  	</div>
+  	<%if @tracking_list%>
+  		<div id="tracking_list_float">
+  		
+  			<%= render @tracking_list %>
+  		
+  		</div>
+  	<%end%>
   </div>
   
   <div id="mainframe">

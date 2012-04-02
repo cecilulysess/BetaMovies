@@ -1,4 +1,14 @@
 BetaMovies::Application.routes.draw do
+  get "managing/index"
+
+  get "sessions/new"
+
+  get "sessions/create"
+
+  get "sessions/destroy"
+
+  resources :users
+
   resources :tracking_items
 
   resources :tracking_lists
@@ -6,10 +16,11 @@ BetaMovies::Application.routes.draw do
   get "watch/index"
   get "watch/show_episode"
   
-  
   # match 'watch/:episode_id/show_episode' => 'watch/show_episode?episode_id=:episode_id'
     
-  resources :movies
+  resources :movies do
+    get :who_watched, :on => :member
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
