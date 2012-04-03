@@ -1,5 +1,14 @@
 BetaMovies::Application.routes.draw do
   get "managing/index"
+  
+  get "managing" => "managing#index"
+    
+    controller :sessions do
+      get "login" => :new
+      post "login" => :create
+      delete "logout" => :destroy
+      
+    end
 
   get "sessions/new"
 

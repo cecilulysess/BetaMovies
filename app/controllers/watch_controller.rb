@@ -1,4 +1,6 @@
 class WatchController < ApplicationController
+  skip_before_filter :authorize
+  
   def index
     # @movies = Movie.find(:all, :limit=> 10)
     @movies = Movie.paginate(:page => params[:page], :order => 'last_updated desc',

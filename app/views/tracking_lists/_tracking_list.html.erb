@@ -3,7 +3,7 @@
 <ul>
 	<%= render(tracking_list.tracking_items) %>
 	<li class="tracking_list_total_line">您共追了：<%= @tracking_list.quantity%> 部片</li>
-	
+	<%= link_to '管理我追的片子', edit_tracking_list_path(@tracking_list) %> 
 </ul>
 
-<%= link_to '管理我追的片子', edit_tracking_list_path(@tracking_list) %> 
+

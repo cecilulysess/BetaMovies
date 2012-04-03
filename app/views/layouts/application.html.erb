@@ -11,6 +11,7 @@
   <div id="topbg">
   <div id="top">
   	<%= image_tag("logo.png", :class=>"logo_image") %>
+  	<p><%= link_to "登录", login_url %></p>
   </div>  	
   </div>
   <div id="side">
@@ -21,6 +22,14 @@
   		
   		</div>
   	<%end%>
+  	<% if session[:user_id] %> 
+  		<br />
+  		| 
+  		<%= link_to "账户管理", users_path %> | 
+  		<%= link_to "返回主页", watch_path %> 
+  		<br />
+  		<%= button_to "登出", logout_path, :method => :delete %>
+  	<% end %>
   </div>
   
   <div id="mainframe">

@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  before_filter :authorize
   protect_from_forgery
   
   private 
@@ -9,4 +10,12 @@ class ApplicationController < ActionController::Base
       session[:tracking_list_id] = tracking_list.id
       tracking_list
     end
+    
+  protected 
+   
+   def authorize
+     unless User.find_by_id(session[:user_id])
+       redirected_to login_url, :notice => "Please log in"
+     end
+   end
 end
