@@ -2,30 +2,26 @@
 <p id ="notice"><%= notice %></p>
 <% end %>
 
-<h1>影片列表</h1>
 
 <% @movies.each do |movie| %>
-	<div class="entry">
-		<p><%= image_tag(movie.image_url)%></p>
-		<ul>
-			<li class="movie_title"><%= link_to movie.title, movie_path(movie) %></li>
-			<li class="movie_desc"><%= sanitize truncate(strip_tags(movie.description), :length => 200) %></li>
-			<li>可观看剧集</li>
-			<li class="movie_episodes">
-			<span class="episodes">
-				<% if movie.episodes.size > 0 %>
-					<% movie.episodes.each do |an_episode| %>
-						<%= link_to an_episode.episode_title, 
-							watch_show_episode_path(:episode_id => an_episode.id) %>
-					<% end %>
-				<% else %>
-					<span class="no_episode_available">暂无</span>
-				<% end %>
-			</span>
-			</li>
-		</ul>
-		<%= button_to "追此片", 
-			tracking_items_path(:movie_id => movie), 
-			:remote => true %>		
+  <div class="entry">
+    <p class="imgbg"><%= image_tag(movie.image_url)%></p>
+    <p class="span">
+        <span class="episodes">
+        <% if movie.episodes.size > 0 %>
+          <% movie.episodes.each do |an_episode| %>
+            <%= link_to an_episode.episode_title, 
+              watch_show_episode_path(:episode_id => an_episode.id) %>
+          <% end %>
+        <% else %>
+          <span class="no_episode_available">暂无</span>
+        <% end %>
+      </span>
+    </p>    
+    <p class="title">
+    	<a href="#"><%= image_tag("wantbutton.png")%></a>
+    	<a href="#"><%= image_tag("detailbutton.png")%></a>
+    	<span><%= sanitize truncate(strip_tags(movie.title), :length => 15) %></span></p>
     </div>
 <% end %>
+<p><%= will_paginate @movies %></p>
