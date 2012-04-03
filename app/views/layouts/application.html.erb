@@ -3,7 +3,8 @@
 <head>
   <title>BetaMovies</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "default" %>
+  <%= javascript_include_tag "jquery", "mediaelement-and-player", "get_query_parameters", "QL_Player", "lecture_view" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -12,8 +13,11 @@
   <div id="top">
   	<%= image_tag("logo.png", :class=>"logo_image") %>
   	<p><%= link_to "登录", login_url %></p>
+
   </div>  	
   </div>
+  
+  <div id="mainframe">
   <div id="side">
   	<%if @tracking_list%>
   		<div id="tracking_list_float">
@@ -31,8 +35,6 @@
   		<%= button_to "登出", logout_path, :method => :delete %>
   	<% end %>
   </div>
-  
-  <div id="mainframe">
   <%= yield %>
   </div>
 

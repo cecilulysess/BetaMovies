@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #bodycontainer{
-  width:100%
+  width:100%;
 }
 #topbg{
   width:100%;
@@ -24,6 +24,11 @@
   height:45px;
   float:right;
   color:#fff;
+}
+#top a{
+  display:block;
+  width:150px;
+  height:45px;
 }
 #content{
   width:1000px;
@@ -60,6 +65,54 @@ li.movie_title a{
   font-size:14px;
 }
 
+
+
+//For watch index
+div.entry{
+  padding-left:5px;
+  padding-top:10px;
+  width:795px;
+  height:190px;
+  border-bottom:1px solid #555;
+}
+div.entry p{
+  width:150px;
+  height:185px;
+  float:left;
+  display:inline;
+  overflow:hidden;
+}
+div.entry img{
+  width:auto;
+  height:180px;
+}
+div.entry ul{
+  margin-top:10px;
+  margin-left:10px;
+  width:600px;
+  height:150px;
+  float:left;
+  display:inline;
+}
+div.entry ul li {
+  margin-bottom:5px;
+}
+div.entry ul span.episodes a{
+  display:block;
+  float:left;
+  width:auto;
+  height:19px;
+  padding-left:8px;
+  padding-right:8px;
+  padding-top:3px;
+  padding-bottom:2px;
+  margin-right:8px;
+  border:1px solid #777;
+}
+div.entry form{
+  float:left;
+  display:inline;
+}
   // width:180px;
   // height:30px;
 // }
