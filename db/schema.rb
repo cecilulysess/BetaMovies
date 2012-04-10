@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120330103637) do
+ActiveRecord::Schema.define(:version => 20120410112022) do
 
   create_table "episodes", :force => true do |t|
     t.string   "episode_title"
@@ -51,8 +51,9 @@ ActiveRecord::Schema.define(:version => 20120330103637) do
     t.string   "name"
     t.string   "hashed_password"
     t.string   "salt"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
+    t.integer  "privilege",       :default => 0, :null => false
   end
 
 end

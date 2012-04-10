@@ -1,19 +1,20 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Name:</b>
+  <b>用户名：</b>
   <%= @user.name %>
 </p>
 
 <p>
-  <b>Hashed password:</b>
-  <%= @user.hashed_password %>
+  <b>权限：
+  <% case @user.privilege %>
+   <% when 0 %>  
+   	普通用户
+   <% when 1  %>
+   	管理员 
+  <%end%>
 </p>
 
-<p>
-  <b>Salt:</b>
-  <%= @user.salt %>
-</p>
 
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

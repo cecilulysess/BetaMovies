@@ -1,5 +1,6 @@
 class TrackingList < ActiveRecord::Base
   has_many :tracking_items, :dependent => :destroy
+  belongs_to :user
   
   def add_movie(movie_id)
     current_movie = tracking_items.where(:movie_id => movie_id).first

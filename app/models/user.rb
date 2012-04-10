@@ -1,8 +1,11 @@
 class User < ActiveRecord::Base
   # require the name is presence and unique
   validates :name, :presence => true, :uniqueness => true
+  
   # require reenter a password and make them matched
   validates :password, :confirmation => true
+  
+  has_one :tracking_list
   
   attr_accessor :password_confirmation
   attr_reader   :password
@@ -24,12 +27,27 @@ class User < ActiveRecord::Base
     end
   end
   
+  # override the default accessor
   def password=(password)
     @password = password
     if password.present?
       generate_salt
       self.hashed_password = self.class.encrypt_password(password, salt)
     end
+  end
+  
+  ##
+  # the definition of privilege
+  # 0 means normal user
+  # 1 means administrator
+  
+  # let the setting method always set the value to 0
+  def privilege=(privilege)
+    write_attribute(:privilege, 0)
+  end
+  
+  def privilege
+    read_attribute(:privilege)
   end
   
   private 
