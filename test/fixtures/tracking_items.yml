@@ -1,9 +1,0 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  movie_id: 1
-  tracking_list_id: 1
-
-two:
-  movie_id: 1
-  tracking_list_id: 1
