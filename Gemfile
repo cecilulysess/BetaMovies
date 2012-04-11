@@ -38,6 +38,8 @@ gem 'jquery-rails'
 # gem 'ruby-debug19', :require => 'ruby-debug'
 group :development, :test do
   gem 'therubyracer'
+  gem "authlogic"
+  gem 'thin'
 end
 
 
