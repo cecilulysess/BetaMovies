@@ -17,5 +17,5 @@
 /log/*.log
 /tmp
 
-Gemfile.lock
-Gemfile
+#Gemfile.lock
+#Gemfile
