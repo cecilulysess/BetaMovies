@@ -46,6 +46,7 @@ end
 
 
 group :production do
+  gem 'therubyracer'
   gem "authlogic"
   gem 'thin'
 end
