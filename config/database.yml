@@ -15,7 +15,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: BetaMovies_development
+  database: metamovies_development
   pool: 5
   username: betamovies
   password: Aa246780
@@ -41,9 +41,9 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: BetaMovies_test
+  database: betamovies_test
   pool: 5
-  username: BetaMovies
+  username: betamovies
   password:
 
 production:
