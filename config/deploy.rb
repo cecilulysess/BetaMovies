@@ -1,6 +1,5 @@
 set :user, 'root'
 set :domain, 'bm.yanxiang.me' 
-set :application, 'opt/webapp/project_depo/depo'
 
 set :application, "BetaMovies"
 set :repository,  "#{user}@#{domain}:/opt/webapp/project_depo/depo.git"
@@ -21,6 +20,10 @@ set :branch, 'master'
 set :scm_verbose, true
 set :use_sudo, false
 
+
+require 'rvm/capistrano'
+set :rvm_ruby_string, "1.9.2"
+set :rvm_type, :system
 # if you're still using the script/reaper helper you will need
 # these http://github.com/rails/irs_process_scripts
 
@@ -39,5 +42,5 @@ end
 after "deploy:update_code", :bundle_install
 desc 'install prerequisites'
 task :bundle_install, :roles => :app do
-  run "cd #{release_path} && bundle install"
+   run "cd #{release_path} && bundle install"
 end

@@ -33,6 +33,8 @@ gem 'jquery-rails'
 
 # Deploy with Capistrano
 gem 'capistrano'
+# add rvm-capistrano so that it works with rvm in the server
+gem 'rvm-capistrano'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
