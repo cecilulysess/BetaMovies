@@ -41,12 +41,12 @@ gem 'rvm-capistrano'
 group :development, :test do
   gem 'therubyracer'
   gem "authlogic"
-  gem 'thin'
+  # gem 'thin'
 end
 
 
 group :production do
   gem 'therubyracer'
   gem "authlogic"
-  gem 'thin'
+  # gem 'thin'
 end
