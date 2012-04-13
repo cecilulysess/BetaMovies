@@ -21,6 +21,9 @@ set :scm_verbose, true
 set :use_sudo, false
 
 
+
+set :bundle_dir, ""
+set :bundle_flags, ""
 require 'rvm/capistrano'
 set :rvm_ruby_string, "1.9.2"
 set :rvm_type, :system

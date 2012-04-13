@@ -41,7 +41,7 @@ gem 'rvm-capistrano'
 group :development, :test do
   gem 'therubyracer'
   gem "authlogic"
-  # gem 'thin'
+  gem 'thin'
 end
 
 
