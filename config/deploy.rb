@@ -24,9 +24,11 @@ set :use_sudo, false
 
 set :bundle_dir, ""
 set :bundle_flags, ""
+
 require 'rvm/capistrano'
 set :rvm_ruby_string, "1.9.2"
 set :rvm_type, :system
+set :normalize_asset_timestamps, false
 # if you're still using the script/reaper helper you will need
 # these http://github.com/rails/irs_process_scripts
 
