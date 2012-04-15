@@ -1,12 +1,17 @@
-set :user, 'root'
+require 'rvm/capistrano'      #add rvm integration
+require 'bundler/capistrano'  # add bundler integration
+load 'deploy/assets'          # make sure assets are precompiled
+
+set :user, 'ubuntu'
 set :domain, 'bm.yanxiang.me' 
 
 set :application, "BetaMovies"
-set :repository,  "#{user}@#{domain}:/opt/webapp/project_depo/depo.git"
+set :repository,  "#{user}@#{domain}:/opt/webapp/projects_repo/bm.yanxiang.me.git"
 
-set :deploy_to, "/opt/webapp/home/bm.yx.me/"
+set :deploy_to, "/opt/webapp/webhome/bm.yanxiang.me"
 
 set :scm, "git"
+set :branch, 'master'
 # Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
 role :web, domain                          # Your HTTP server, Apache/etc
@@ -16,19 +21,16 @@ role :db,  domain, :primary => true # This is where Rails migrations will run
 
 
 set :deploy_via, :remote_cache
-set :branch, 'master'
+
 set :scm_verbose, true
 set :use_sudo, false
-
-
 
 set :bundle_dir, ""
 set :bundle_flags, ""
 
-require 'rvm/capistrano'
-set :rvm_ruby_string, "1.9.2"
-set :rvm_type, :system
-set :normalize_asset_timestamps, false
+# set :rvm_ruby_string, "1.9.2"
+# set :rvm_type, :user
+# set :normalize_asset_timestamps, false
 # if you're still using the script/reaper helper you will need
 # these http://github.com/rails/irs_process_scripts
 
@@ -44,8 +46,8 @@ namespace :deploy do
   end
 end
 
-after "deploy:update_code", :bundle_install
-desc 'install prerequisites'
-task :bundle_install, :roles => :app do
-   run "cd #{release_path} && bundle install"
-end
+# after "deploy:update_code", :bundle_install
+# desc 'install prerequisites'
+# task :bundle_install, :roles => :app do
+   # run "cd #{release_path} && bundle install"
+# end
