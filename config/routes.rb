@@ -1,6 +1,11 @@
 BetaMovies::Application.routes.draw do
-  resources :players
-
+  # useless resources 
+  #resources :players
+  
+  
+  resource :user_session
+  resources :users
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
