@@ -5,6 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+# coding: utf-8
 Movie.delete_all
 efmovie = Movie.create( :title=>"EFTest", 
               :desc => "This is a 测试",
