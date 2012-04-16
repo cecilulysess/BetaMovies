@@ -1,0 +1,12 @@
+ <video controls="controls"
+           preload="none"
+           autoplay="autoplay"
+           loop="loop"
+           id="QL_video_element_first"
+           width="960"
+           height="540"
+           autobuffer="autobuffer">
+        <source src= <%= @episode.link %> type="video/mp4" />当你看到这条消息的时候意味着你的浏览器不被支持，请使用Google Chrome访问本站。
+      <a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN">下载Google Chrome</a>
+        <track kind="subtitles" srclang="en" src="https://class.coursera.org/saas/lecture/subtitles?q=26_en"></track>    
+    </video>

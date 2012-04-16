@@ -8,7 +8,7 @@
         <% if movie.episodes.size > 0 %>
           <% movie.episodes.each do |an_episode| %>
             <span class="episodes"><%= link_to an_episode.title, 
-              episode_path(:episode_id => an_episode.id) %>
+              movie_episode_path(movie, an_episode) %>
             </span>
           <% end %>
         <% else %>

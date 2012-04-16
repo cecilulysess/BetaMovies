@@ -12,4 +12,12 @@ class ApplicationController < ActionController::Base
       return false
     end
   end
+  
+  def authenticate_admin
+    unless current_user && current_user.privilege_level > 0
+      flash[:notice] = "only admin can visit the page"
+      redirect_to movies_path
+      return false
+    end
+  end
 end
