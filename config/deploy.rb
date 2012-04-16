@@ -40,3 +40,5 @@ namespace :deploy do
     run "cd #{current_path}; rake db:seed RAILS_ENV=production"
   end
 end
+
+after "deploy", "deploy:migrate"
