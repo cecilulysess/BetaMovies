@@ -2,7 +2,7 @@ BetaMovies::Application.routes.draw do
   devise_for :users
 
   resources :movies
-  resources :episodes
+  resource :episode
 
   # useless resources 
   #resources :players

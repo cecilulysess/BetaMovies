@@ -5,7 +5,10 @@ class MoviesController < ApplicationController
   # GET /movies
   # GET /movies.json
   def index
-    @movies = Movie.all
+    # @movies = Movie.all
+    ## todo change the order to last updated
+     @movies = Movie.paginate(:page => params[:page], :order => 'updated_at desc',
+              :per_page => 4)
 
     respond_to do |format|
       format.html # index.html.erb

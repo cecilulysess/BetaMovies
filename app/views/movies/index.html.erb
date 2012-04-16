@@ -17,11 +17,11 @@
     </p>    
     <p class="title">
       <a href="#"><%= image_tag("wantbutton.png")%></a>
-      <a href="#"><%= image_tag("detailbutton.png")%></a>
+      <%= link_to image_tag("detailbutton.png"), movie_path(movie) %>
       <span><%= sanitize truncate(strip_tags(movie.title), :length => 15) %></span></p>
     </div>
 <% end %>
 
 <br />
-
-<%= link_to 'New Movie', new_movie_path %>
+<p><%= will_paginate @movies %></p>
+<!-- <%= link_to 'New Movie', new_movie_path %> -->
