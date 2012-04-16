@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>BetaMovies</title>
+  <title>BetaMovies Ver 0.1.0</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -9,7 +9,7 @@
 <body>
   <div id="topbg">
   <div id="top">
-    <%= image_tag("logo.png", :class=>"logo_image") %>
+    <%= link_to image_tag("logo.png", :class=>"logo_image"), movies_path %>
     <% if !current_user.nil? %>
       <p><span><%= link_to "注销", destroy_user_session_path, 
               :method=> :delete %></span></p>
@@ -28,7 +28,7 @@
   <div class="footer">
     <div class="footer_container clearfix">
       <p>BetaMovies 我们的玩具箱</p>
-      Authors: ...
+      Authors: YX LG ZJ
     </div>
   </div>
 </body>

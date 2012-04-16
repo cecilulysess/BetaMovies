@@ -1,8 +1,12 @@
 BetaMovies::Application.routes.draw do
+  get "episodes/new"
+
+  get "episodes/create"
+
   devise_for :users
 
   resources :movies do 
-    resources :episodes  
+    resources :episodes
   end
   
 
