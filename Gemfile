@@ -31,23 +31,22 @@ gem 'jquery-rails'
 # Use unicorn as the app server
 # gem 'unicorn'
 
-
+gem 'devise'
 
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 group :development, :test do
+ 
   # Deploy with Capistrano
   gem 'capistrano'
   # add rvm-capistrano so that it works with rvm in the server
   gem 'rvm-capistrano'
   gem 'therubyracer'
-  gem "authlogic"
   gem 'thin'
 end
 
 
 group :production do
   gem 'therubyracer'
-  gem "authlogic"
   # gem 'thin'
 end

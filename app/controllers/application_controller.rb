@@ -1,16 +1,9 @@
 class ApplicationController < ActionController::Base
-  helper_method :current_user_session, :current_user
-  
+  helper_method :current_user_session, :current_user, :user_signed_in?
+  before_filter :authenticate_user!
   protect_from_forgery
   
-  protected 
-  def current_user_session
-    @current_user_session ||= UserSession.find
-  end
-  
-  def current_user
-    @current_user ||= current_user_session && current_user_session.user
-  end
+
   
   def authenticate
     unless current_user

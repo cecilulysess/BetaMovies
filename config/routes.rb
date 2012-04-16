@@ -1,10 +1,11 @@
 BetaMovies::Application.routes.draw do
+  devise_for :users
+
+  resources :movies
+
   # useless resources 
   #resources :players
-  
-  
-  resource :user_session
-  resources :users
+  root :to => "movies#index"
   
   # The priority is based upon order of creation:
   # first created -> highest priority.
