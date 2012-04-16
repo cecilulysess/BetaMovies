@@ -1,28 +1,26 @@
 <h1>Listing movies</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Desc</th>
-    <th>Image</th>
-    <th>Is finished</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
 <% @movies.each do |movie| %>
-  <tr>
-    <td><%= movie.title %></td>
-    <td><%= movie.desc %></td>
-    <td><%= movie.image %></td>
-    <td><%= movie.is_finished %></td>
-    <td><%= link_to 'Show', movie %></td>
-    <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
-    <td><%= link_to 'Destroy', movie, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
+  <div class="entry">
+    <p class="imgbg"><%= image_tag(movie.image)%></p>
+    <p class="span">
+        
+        <% if movie.episodes.size > 0 %>
+          <% movie.episodes.each do |an_episode| %>
+            <span class="episodes"><%= link_to an_episode.title, 
+              episode_path(:episode_id => an_episode.id) %>
+            </span>
+          <% end %>
+        <% else %>
+          <span class="no_episode_available">暂无</span>
+        <% end %>
+    </p>    
+    <p class="title">
+      <a href="#"><%= image_tag("wantbutton.png")%></a>
+      <a href="#"><%= image_tag("detailbutton.png")%></a>
+      <span><%= sanitize truncate(strip_tags(movie.title), :length => 15) %></span></p>
+    </div>
 <% end %>
-</table>
 
 <br />
 

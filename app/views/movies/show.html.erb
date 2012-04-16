@@ -20,6 +20,11 @@
   <%= @movie.is_finished %>
 </p>
 
+<p>
+  <b>Episodes:</b>
+  <%= @movie.episodes %>
+</p>
+
 
 <%= link_to 'Edit', edit_movie_path(@movie) %> |
 <%= link_to 'Back', movies_path %>
