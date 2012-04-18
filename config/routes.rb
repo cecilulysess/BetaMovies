@@ -3,7 +3,7 @@ BetaMovies::Application.routes.draw do
 
   get "episodes/create"
 
-  devise_for :users
+  devise_for :users,:controllers => { :registrations => "registrations" }
 
   resources :movies do 
     resources :episodes

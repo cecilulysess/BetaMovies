@@ -1,23 +1,23 @@
 BetaMovies::Application.configure do
   #########################gmail settings#############################
-  require 'tlsmail'
-  Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
-  ActionMailer::Base.delivery_method = :smtp
-  ActionMailer::Base.perform_deliveries = true
-  #ActionMailer::Base.default_charset = "utf-8"
-   
-  ActionMailer::Base.raise_delivery_errors = true
-   
-  ActionMailer::Base.smtp_settings = {
-    :domain          => "betamovies.yx.me@gmail.com",
-    :address         => 'smtp.gmail.com',
-   
-    :port            => 587,
-    :tls             => true,
-    :authentication  => :plain,
-    :user_name       => 'betamovies.yx.me@gmail.com',
-    :password        => 'Dd246780'
-  }
+  # require 'tlsmail'
+  # Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)
+  # ActionMailer::Base.delivery_method = :smtp
+  # ActionMailer::Base.perform_deliveries = true
+  # #ActionMailer::Base.default_charset = "utf-8"
+#    
+  # ActionMailer::Base.raise_delivery_errors = true
+#    
+  # ActionMailer::Base.smtp_settings = {
+    # :domain          => "betamovies.yx.me@gmail.com",
+    # :address         => 'smtp.gmail.com',
+#    
+    # :port            => 587,
+    # :tls             => true,
+    # :authentication  => :plain,
+    # :user_name       => 'betamovies.yx.me@gmail.com',
+    # :password        => 'Dd246780'
+  # }
   ####################################################################
   
   # Settings specified here will take precedence over those in config/application.rb
