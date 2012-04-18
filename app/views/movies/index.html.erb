@@ -1,7 +1,5 @@
-<h1>全部影片</h1>
-
 <% @movies.each do |movie| %>
-  <div class="entry">
+  <div class="entry <%=cycle('entry_even', 'entry_odd')%>">
     <p class="imgbg"><%= image_tag(movie.image)%></p>
     <p class="span">
         
@@ -21,10 +19,8 @@
       <span><%= sanitize truncate(strip_tags(movie.title), :length => 15) %></span></p>
     </div>
 <% end %>
+<%= will_paginate @movies %>
 
-<br />
-<p><%= will_paginate @movies %></p>
-<br />
 <% if current_user.content_admin? %>
   <%= link_to '插入新片', new_movie_path %>
 <% end %>

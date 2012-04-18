@@ -12,18 +12,20 @@
     <%= link_to image_tag("logo.png", :class=>"logo_image"), movies_path %>
     <% if !current_user.nil? %>
       <p><span><%= link_to "注销", destroy_user_session_path, 
-              :method=> :delete %></span></p>
+              :method=> :delete %></span>
+      <span><%= current_user.email %></span></p>
     <% else %>
-      <p><span><%= link_to "注册", new_user_registration_path %> 或  
+      <p><span><%= link_to "注册", new_user_registration_path %>
               <%= link_to "登录", new_user_session_path %></span></p>
     <% end %>
   </div>    
   </div>
-  <p class="notice"><%= notice %></p>
-  <p class="alert"><%= alert %></p>
-
-
-<%= yield %>
+  <div id="midbg">
+  <div id="midcontainer">
+     <p class="notice <%= "hidenotify" if notice.nil? %>"><%= notice %></p>
+     <p class="alert <%= "hidenotify" if alert.nil? %>"><%= alert %></p>
+     <%= yield %>
+  </div>
 
   <div class="footer">
     <div class="footer_container clearfix">

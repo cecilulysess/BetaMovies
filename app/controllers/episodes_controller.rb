@@ -1,6 +1,7 @@
 class EpisodesController < ApplicationController
   def show
     @episode = Episode.find(params[:id])
+    @movie = @episode.movie
   end
   
   def new

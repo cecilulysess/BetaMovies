@@ -1,40 +1,26 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <b>Title:</b>
-  <%= @movie.title %>
-</p>
-
-<p>
-  <b>Desc:</b>
-  <%= @movie.desc %>
-</p>
-
-<p>
-  <%= image_tag @movie.image %>
-</p>
-
-<p>  
-  <% if @movie.is_finished %>
-    已完结
-  <% else %>
-    未完结
-  <% end %>
-</p>
-
-<p>剧集：</p>
-<% if @movie.episodes.size > 0 %>
-  <% @movie.episodes.each do |an_episode| %>
-    <span class="episodes"><%= link_to an_episode.title, 
-      movie_episode_path(@movie, an_episode) %>
-    </span>
-  <% end %>
-<% else %>
-  <span class="no_episode_available">暂无</span>
-<% end %>
-<br/>
-
-<% if current_user.content_admin? %>
-<%= link_to '编辑影片', edit_movie_path(@movie) %> 
-<% end %>
-<!-- <%= link_to 'Back', movies_path %> -->
+<div id="show_main">
+    <p class="show_img"><%= image_tag @movie.image %></p>
+	<p class="show_title show_left"><%= @movie.title %></p>
+    <p class="show_desc show_left"><%= sanitize  @movie.desc %></p>
+    <p class="show_statuti show_left">状态：</p>
+    <p class="show_statu show_left" id="<%= @movie.is_finished ? "status_ended": "status_unend" %>">
+    	<% if @movie.is_finished %>已完结<% else %>连载中<% end %>
+   	</p>
+    <p class="show_entry show_left">
+      <span>剧集：</span>
+      <% if @movie.episodes.size > 0 %>
+        <% @movie.episodes.each do |an_episode| %>
+          <span class="episodes"><%= link_to an_episode.title,movie_episode_path(@movie, an_episode) %></span>
+        <% end %>
+      <% else %>
+        <span class="no_episode_available">暂无</span>
+      <% end %>
+    </p>
+    <p class="show_edit show_left">
+       <% if current_user.content_admin? %>
+          <%= link_to '编辑影片', edit_movie_path(@movie) %> 
+       <% end %>
+       <%= link_to '返回主页', movies_path %>
+    </p>
+</div>

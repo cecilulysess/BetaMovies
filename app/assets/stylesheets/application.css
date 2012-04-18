@@ -10,7 +10,87 @@
  *
  *= require_self
  *= require_tree .
+ //*
+ * CSS Framework For HQU
+ *
+ * Core CSS to reset and preset(CSS的复位和样式库)
+ *
+ * !!!!!Don't make any changes in this file!!!!!
+ *
+ * Version: Beta1   Copyright 2011
+ */
+
+/* Contents
+  
+  0-Resets
+  2-Presets
+
 */
+
+/* 0 Resets ----------- */
+
+* {
+	margin:0px;
+	padding:0px;
+	font-size:12px;
+	font-family:Microsoft YaHei,Segoe UI,Tahoma,Arial,Verdana,sans-serif;
+	cellspacing:0px;
+	cellpadding:0px;
+}
+ul {
+	list-style:none;
+}
+img{
+	border:0;
+}
+a {
+	text-decoration:none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* 1 Preset ----------- */
+
+.db{
+	display:block;
+}
+.dn {
+	display:none;
+}
+.fl{
+	float:left;
+	_display:inline;
+}
+.fr{
+	float:right;
+	_display:inline;
+}
+.cl{
+	clear:both;
+}
+.tl {
+	text-align:left;
+}
+.tc {
+	text-align:center;
+}
+.tr {
+	text-align:right;
+}
+.tdn{
+	text-decoration:none;
+}
+.ovh {
+	overflow:hidden;
+}
+.c0{
+	color:#000;
+}
+.cf{
+	color:#fff;
+}
 #bodycontainer{
   width:100%;
   background-color:#eee;
@@ -31,18 +111,21 @@
   float:left;
 }
 .footer {
+float:left;
+  width:100%;
+  height:80px;
   color: #636363;
-  padding: 45px 0 0 0;
+  margin-top:30px;
   font-size: 12px;
-  clear: both;
-}
-.footer_container{
-  min-height: 80px;
-  overflow: hidden;
   border-top: 1px solid #e0e0e0;
   border-bottom: 1px solid #e0e0e0;
-  box-shadow: inset 0 -1px 0 white;
   background-color: #f8f8f8;
+}
+.footer_container{
+	padding-left:20px;
+	padding-top:10px;
+	width:930px;
+	margin:auto;
 }
 .clearfix{
   display: block;
@@ -53,6 +136,42 @@
   padding-top:10px;
   float:left;
 }
+#top p a{
+	font-size:16px;
+}
 #top span{
-  float:right;
+	color:#eee;
+	display:block;
+	float:right;
+	margin-left:15px;
+	font-size:16px;
+}
+#midbg{
+	width:100%;
+	height:auto;
+}
+#midcontainer{
+	width:950px;
+	height:auto;
+	margin:auto;
+}
+.notice{
+	width:910px;
+	height:auto;
+	padding:10px;
+	padding-left:20px;
+	padding-right:20px;
+	margin-top:5px;
+	margin-bottom:5px;
+	border:1px solid #0dbe00;
+	background:#beffb9;
+	text-align: center;
+	
+}
+.alert{
+	border:1px solid #ff3030;
+	background:#f9baba;
+}
+.hidenotify {
+	display: none;
 }
