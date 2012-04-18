@@ -1,3 +1,4 @@
+# coding: utf-8
 class ApplicationController < ActionController::Base
   helper_method :current_user_session, :current_user, :user_signed_in?
   before_filter :authenticate_user!
@@ -15,7 +16,7 @@ class ApplicationController < ActionController::Base
   
   def authenticate_admin
     unless current_user && current_user.privilege_level > 0
-      flash[:notice] = "only admin can visit the page"
+      flash[:notice] = "只有管理员才有权限进行修改操作"
       redirect_to movies_path
       return false
     end

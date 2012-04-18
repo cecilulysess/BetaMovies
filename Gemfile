@@ -33,6 +33,8 @@ gem 'jquery-rails'
 
 gem 'devise'
 gem 'will_paginate', '~> 3.0'
+gem 'tlsmail'
+
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 group :development, :test do

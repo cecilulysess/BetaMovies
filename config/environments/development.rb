@@ -1,4 +1,23 @@
 BetaMovies::Application.configure do
+  #########################gmail settings#############################
+  require 'tlsmail'       
+   Net::SMTP.enable_tls(OpenSSL::SSL::VERIFY_NONE)   
+   ActionMailer::Base.delivery_method = :smtp   
+   ActionMailer::Base.perform_deliveries = true   
+   ActionMailer::Base.raise_delivery_errors = true   
+   ActionMailer::Base.smtp_settings = {   
+     :enable_starttls_auto => true,     
+     :address            => 'smtp.gmail.com',   
+     :port               => 587,   
+     :tls                  => true,   
+     :domain             => 'google.com',    
+     :authentication     => :plain,   
+     :user_name          => 'betamovies.yx.me@gmail.com',   
+     :password           => 'Dd246780' # for security reasons you can use a environment variable too. (ENV['INFO_MAIL_PASS'])   
+    }
+  
+  ####################################################################
+  
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on
@@ -15,7 +34,7 @@ BetaMovies::Application.configure do
 
   # Don't care if the mailer can't send
   config.action_mailer.raise_delivery_errors = false
-  config.action_mailer.default_url_options = { :host => 'localhost:5000' }
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
 

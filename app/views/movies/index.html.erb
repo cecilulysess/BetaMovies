@@ -24,4 +24,7 @@
 
 <br />
 <p><%= will_paginate @movies %></p>
-<!-- <%= link_to 'New Movie', new_movie_path %> -->
+<br />
+<% if current_user.content_admin? %>
+  <%= link_to '插入新片', new_movie_path %>
+<% end %>
