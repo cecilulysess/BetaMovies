@@ -1,3 +1,4 @@
+# coding: utf-8
 class EpisodesController < ApplicationController
   def show
     @episode = Episode.find(params[:id])
@@ -27,6 +28,21 @@ class EpisodesController < ApplicationController
         format.html { render action: "new" }
         format.json { render json: @episode.errors, status: :unprocessable_entity }
       end
+    end
+  end
+  
+  # DELETE /movies/1/episodes/1
+  # DELETE /movies/1/episodes/1.json
+  def destroy
+    @episode = Episode.find(params[:id])
+    movie = @episode.movie
+    flash[:notice] = "剧集#{@episode.title} 已经被删除"
+    
+    @episode.destroy
+
+    respond_to do |format|
+      format.html { redirect_to movie_url(movie) }
+      format.json { head :no_content }
     end
   end
 end

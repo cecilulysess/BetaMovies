@@ -12,17 +12,22 @@
     </video>
     
 <p class="show_entry show_left">
-      <span>相关剧集：</span>
-      <% if @movie.episodes.size > 0 %>
-        <% @movie.episodes.each do |an_episode| %>
-          <span class="episodes">
-          	<%= an_episode != @episode ? 
-          			(link_to an_episode.title, movie_episode_path(@movie, an_episode) ) :
-          			an_episode.title %>
-          	
-          </span>
-        <% end %>
-      <% else %>
-        <span class="no_episode_available">暂无</span>
-      <% end %>
-    </p>
+  <span>相关剧集：</span>
+  <% if @movie.episodes.size > 0 %>
+    <% @movie.episodes.each do |an_episode| %>
+      <span class="episodes">
+      	<%= an_episode != @episode ? 
+      			(link_to an_episode.title, movie_episode_path(@movie, an_episode) ) :
+      			an_episode.title %>
+      	
+      </span>
+    <% end %>
+  <% else %>
+    <span class="no_episode_available">暂无</span>
+  <% end %>
+</p>
+
+ <% if current_user.content_admin? %>
+    <!-- <%= link_to '编辑本集', edit_movie_episode_path(@movie, @episode) %> --> 
+    <%= link_to '删除本集', [@movie, @episode], confirm: '删了就没有了哦，确定要？', method: :delete %>
+ <% end %>

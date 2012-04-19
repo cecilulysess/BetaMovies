@@ -20,6 +20,7 @@
     <p class="show_edit show_left">
        <% if current_user.content_admin? %>
           <%= link_to '编辑影片', edit_movie_path(@movie) %> 
+          <%= link_to '删除影片', @movie, confirm: '删了就没有了哦，确定要？', method: :delete %>
        <% end %>
        <%= link_to '返回主页', movies_path %>
     </p>

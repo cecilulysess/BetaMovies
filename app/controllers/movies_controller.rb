@@ -1,3 +1,4 @@
+# coding: utf-8 
 class MoviesController < ApplicationController
   before_filter :authenticate_admin, :except => [:index, :show]
   
@@ -79,6 +80,8 @@ class MoviesController < ApplicationController
   # DELETE /movies/1.json
   def destroy
     @movie = Movie.find(params[:id])
+    flash[:notice] = "影片#{@movie.title} 已经被删除"
+    @movie.episodes.destroy_all
     @movie.destroy
 
     respond_to do |format|
