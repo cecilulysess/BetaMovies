@@ -10,3 +10,19 @@
       <a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN">下载Google Chrome</a>
         <track kind="subtitles" srclang="en" src="https://class.coursera.org/saas/lecture/subtitles?q=26_en"></track>    
     </video>
+    
+<p class="show_entry show_left">
+      <span>相关剧集：</span>
+      <% if @movie.episodes.size > 0 %>
+        <% @movie.episodes.each do |an_episode| %>
+          <span class="episodes">
+          	<%= an_episode != @episode ? 
+          			(link_to an_episode.title, movie_episode_path(@movie, an_episode) ) :
+          			an_episode.title %>
+          	
+          </span>
+        <% end %>
+      <% else %>
+        <span class="no_episode_available">暂无</span>
+      <% end %>
+    </p>

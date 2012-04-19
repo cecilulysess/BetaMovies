@@ -10,42 +10,37 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+  <div class="field edit_titlech">
+    影片名称：<%= f.text_field :title %>
   </div>
-  <div class="field">
-    <%= f.label :desc %><br />
-    <%= f.text_area :desc %>
+  <div class="field edit_descch">
+    详细描述：<%= f.text_area :desc %>
   </div>
-  <div class="field">
-    <%= f.label :image %><br />
-    <%= f.text_area :image %>
+  <div class="field " id="edit_imgch">  	
+    精彩截图：<%= f.text_field :image %>
+    <p><%= image_tag @movie.image unless @movie.image.nil? || @movie.image.empty? %></p>
   </div>
-  <div class="field">
-    <%= f.label :is_finished %><br />
-    <%= f.check_box :is_finished %>
+  <div class="field " id="edit_finch">
+   是否完结：<%= f.check_box :is_finished %>
   </div>
-  <div class="actions">
+  <%if !@movie.id.nil? %>
+	  <div class="field">剧集：<br/>
+	    <% if @movie.episodes.size > 0 %>
+	      <% @movie.episodes.each do |an_episode| %>
+	        <span class="episodes"><%= link_to an_episode.title, 
+	          movie_episode_path(@movie, an_episode) %>
+	        </span>
+	      <% end %>
+	    <% else %>
+	      <span class="no_episode_available">暂无</span>
+	    <% end %>
+	  </div>
+  
+	  <div class="field ">添加新剧集：<br/>
+	    <%= link_to "添加", new_movie_episode_path(@movie) %>
+	  </div>
+  <%end %>
+  <div class="actions field" id="update_btn">
     <%= f.submit %>
   </div>
-  
-  <% if !@movie.id.nil? %>
-    <div>剧集：<br/>
-      
-      <% if @movie.episodes.size > 0 %>
-        <% @movie.episodes.each do |an_episode| %>
-          <span class="episodes"><%= link_to an_episode.title, 
-            movie_episode_path(@movie, an_episode) %>
-          </span>
-        <% end %>
-      <% else %>
-        <span class="no_episode_available">暂无</span>
-      <% end %>
-    </div>
-    <div>添加新剧集：<br/>
-      <%= link_to "添加", new_movie_episode_path(@movie) %>
-    </div>
-  <% end %>
 <% end %>

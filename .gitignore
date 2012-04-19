@@ -18,5 +18,6 @@
 /tmp
 /vendor/cache
 
-# Gemfile.lock
-# Gemfile
+Gemfile.lock
+Gemfile
+/.metadata
