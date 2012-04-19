@@ -15,7 +15,6 @@ class User < ActiveRecord::Base
     :reference_code
   
   def content_admin?
-    puts "---------------------------------------------", privilege_level
     return privilege_level > 0
   end
 end
